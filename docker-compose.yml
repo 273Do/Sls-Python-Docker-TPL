@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: sls-docker-flask-tpl #contenaer name here
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "5000:5000"
+    tty: true
+    # environment: #
+    #   FLASK_APP: /usr/src/app/your_project_name/app.py # your project name here
+    #   FLASK_ENV: development #
+    # command: flask run -h 0.0.0.0 --debug --reload #
