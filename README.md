@@ -4,6 +4,13 @@
 
 # 使い方
 
+事前準備.
+
+- AWS でアクセスキーとシークレットキーを発行してください．
+
+- Mac を使用している場合は設定から AirPlay レシーバーを切っておきましょう．
+  (ポートが Flask のデフォルトポートである 5000 番と重複しているため)
+
 1.  リポジトリを用意しましたのでクローンしてください．
 
 2.  `docker-compose.yml`の`container_name`にコンテナ名を設定し，`docker compose build` で Docker イメージを構築します．
@@ -23,7 +30,7 @@
 
 6.  `serverless.yml`で Python のバージョン(`runtime`の部分)を`python3.9`に変更し，`custom`の`wsgi`に`pythonBin: /usr/bin/python3`を追加します．
 
-7.  `docker-compose.yml`にのコメントアウトされている部分を解除し，`FLASK_APP`に app.py のパスを指定します．
+7.  `docker-compose.yml`のコメントアウトされている部分を解除し，`FLASK_APP`に app.py のパスを指定します．
 
 8.  `exit`でコンテナから抜け, `docker compose down`でコンテナの終了させます．
 
